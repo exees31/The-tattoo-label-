@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Tattoo Label | TTL</title>
+    <style>
+        /* Base Styling Engine adapted for TTL */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, sans-serif;
+        }
+
+        :root {
+            --bg-dark: #070708;
+            --bg-card: #121214;
+            --text-light: #ffffff;
+            --text-gray: #94a3b8;
+            --neon-pink: #ff007f;
+            --neon-cyan: #00e5ff;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+        }
+
+        /* Hero / Header Section */
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            background: radial-gradient(circle at center, #16111a 0%, var(--bg-dark) 80%);
+            position: relative;
+        }
+
+        .logo-container {
+            width: 180px;
+            height: 180px;
+            margin-bottom: 2rem;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid var(--neon-cyan);
+            box-shadow: 0 0 20px var(--neon-pink);
+        }
+
+        .logo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, var(--text-light), var(--text-gray));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-gray);
+            max-width: 600px;
+            margin-bottom: 2.5rem;
+            letter-spacing: 1px;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: transparent;
+            color: var(--text-light);
+            border: 2px solid var(--neon-pink);
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-radius: 4px;
+            transition: all 0.4s ease;
+        }
+
+        .cta-btn:hover {
+            background: var(--neon-pink);
+            box-shadow: 0 0 25px var(--neon-pink);
+            transform: translateY(-2px);
+        }
+
+        /* Info Section */
+        .studio-details {
+            text-align: center;
+            background: var(--bg-card);
+            border-y: 1px solid #1e1e24;
+            padding: 3rem 2rem;
+        }
+
+        .studio-details p {
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+        }
+
+        .studio-details span {
+            color: var(--neon-cyan);
+            font-weight: bold;
+        }
+
+        .license {
+            margin-top: 0.5rem;
+            font-size: 0.85rem;
+            color: var(--text-gray);
+        }
+
+        /* Portfolio Gallery Grid */
+        .gallery-title {
+            text-align: center;
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .gallery-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: var(--neon-cyan);
+            margin: 0.75rem auto 0;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .portfolio-item {
+            background: var(--bg-card);
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #1e1e24;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .portfolio-item:hover {
+            transform: scale(1.02);
+            border-color: var(--neon-pink);
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 3rem 2rem;
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            border-top: 1px solid #1e1e24;
+        }
+
+        /* Responsive Design Rules */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .portfolio-grid { grid-template-columns: 1fr; }
+            .portfolio-item img { height: 380px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="logo-container">
+            <!-- Profile photo referenced verbatim -->
+            <img src="Screenshot_20260605-144418.png" alt="The Tattoo Label Logo">
+        </div>
+        <h1>The Tattoo Label</h1>
+        <p>Tattoos • Art • Jewellery • Piercings • Whitening • Tooth Gems • Gold Caps</p>
+        <a href="#gallery" class="cta-btn">View Flash & Work</a>
+    </section>
+
+    <!-- Studio Details Bar -->
+    <section class="studio-details">
+        <p>Located at <span>3/297 Crown St, Wollongong, NSW, 2500</span></p>
+        <p class="license">ML#011494</p>
+    </section>
+
+    <!-- Showcase Gallery Section -->
+    <main class="container" id="gallery">
+        <h2 class="gallery-title">Studio Showcase</h2>
+        <div class="portfolio-grid">
+            
+            <!-- Item 1 -->
+            <div class="portfolio-item">
+                <img src="Screenshot_20260605-144832.png" alt="TTL Tattoo Artwork 1">
+            </div>
+
+            <!-- Item 2 -->
+            <div class="portfolio-item">
+                <img src="Screenshot_20260605-144844.png" alt="TTL Tattoo Artwork 2">
+            </div>
+
+            <!-- Item 3 -->
+            <div class="portfolio-item">
+                <img src="Screenshot_20260605-144858.png" alt="TTL Tattoo Artwork 3">
+            </div>
+
+            <!-- Item 4 -->
+            <div class="portfolio-item">
+                <img src="Screenshot_20260605-144909.png" alt="TTL Tattoo Artwork 4">
+            </div>
+
+            <!-- Item 5 -->
+            <div class="portfolio-item">
+                <img src="Screenshot_20260605-144920.png" alt="TTL Tattoo Artwork 5">
+            </div>
+
+            <!-- Item 6 -->
+            <div class="portfolio-item">
+                <img src="Screenshot_20260605-145003.png" alt="TTL Tattoo Artwork 6">
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 The Tattoo Label (TTL). Designed for excellence.</p>
+    </footer>
+
+</body>
+  </html>
+  
